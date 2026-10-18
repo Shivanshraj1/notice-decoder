@@ -6,13 +6,11 @@
 
 Paste a college notice. Get your events, clashes caught early, and a calendar file.
 
-![HTML](https://img.shields.io/badge/HTML-CSS-JS-25D366?style=flat-square)
-![No backend](https://img.shields.io/badge/backend-none-C2F84F?style=flat-square&labelColor=1F3A4B)
-![SETU 2026](https://img.shields.io/badge/SETU-2026-1F3A4B?style=flat-square)
-
 [**Live demo**](https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/) · [How it works](#-how-it-works) · [Clash rule](#-the-clash-rule) · [Run it](#-run-it)
 
-<img src="screenshots/home.png" alt="Notice Decoder home screen" width="85%">
+<img src="screenshots/home.png" alt="Home page" width="85%">
+<br>
+<sub><b>Home page</b></sub>
 
 </div>
 
