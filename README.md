@@ -6,7 +6,7 @@
 
 Paste a college notice. Get your events, clashes caught early, and a calendar file.
 
-[**Live demo**](https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/) · [How it works](#-how-it-works) · [Clash rule](#-the-clash-rule) · [Run it](#-run-it)
+[**Live demo**](https://notice-decoder-asur.vercel.app/) · [How it works](#-how-it-works) · [Clash rule](#-the-clash-rule) · [Run it](#-run-it)
 
 <img src="screenshots/home.png" alt="Home page" width="85%">
 <br>
@@ -104,7 +104,7 @@ start(A) < end(B)  and  start(B) < end(A)
 
 ## ▶️ Run it
 
-**Online:** open the [live demo](https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/).
+**Online:** open the [live demo](https://notice-decoder-asur.vercel.app/).
 
 **On your computer:** download `index.html` and open it in any browser. Nothing to install.
 
