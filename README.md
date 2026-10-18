@@ -16,26 +16,22 @@ Paste a college notice. Get your events, clashes caught early, and a calendar fi
 
 ---
 
-## 😵 Why we built it
+## ✌️ Why we built it
 
 - **The date is buried.** Notices arrive as long paragraphs on groups and boards, and the important date hides in the middle.
 - **Clashes show up late.** A test, a lecture and a deadline can land on the same day, and students find out too late.
 - **Copying is slow.** Typing dates into a calendar by hand is tedious, and one wrong digit means a missed deadline.
 
-## 📸 See it in action
+## 📱 Screens
 
 <table>
   <tr>
-    <td align="center"><img src="screenshots/chat.png" alt="Decoding a notice"><br><sub>Paste a notice and get event cards</sub></td>
-    <td align="center"><img src="screenshots/clash.png" alt="Clash warning"><br><sub>Clashes flagged with a tip</sub></td>
+    <td align="center"><img src="screenshots/decode.png" alt="Decode"><br><sub><b>Decode</b></sub></td>
+    <td align="center"><img src="screenshots/schedule.png" alt="Schedule"><br><sub><b>Schedule</b></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="screenshots/schedule.png" alt="My schedule"><br><sub>Everything in one schedule</sub></td>
-    <td align="center"><img src="screenshots/calendar.png" alt="Add to calendar"><br><sub>Google Calendar or .ics file</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="screenshots/dark.png" alt="Dark mode"><br><sub>Light and dark mode</sub></td>
-    <td align="center"><img src="screenshots/mobile.png" alt="Mobile view"><br><sub>Works on your phone</sub></td>
+    <td align="center"><img src="screenshots/saved.png" alt="Saved"><br><sub><b>Saved</b></sub></td>
+    <td align="center"><img src="screenshots/settings.png" alt="Settings"><br><sub><b>Settings</b></sub></td>
   </tr>
 </table>
 
