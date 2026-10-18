@@ -123,5 +123,8 @@ No backend and no accounts. Your notices and settings stay in your own browser.
 
 ## 🙌 Credits
 
-Built by team **ASUR** for SETU 2026.
-Effects adapted from Skiper UI and toggles.dev by Alfie Jones.
+## 🙌 Credits
+
+Crafted with 💚 by team **ASUR** for SETU 2026.
+
+<sub>UI effects via Skiper UI and toggles.dev.</sub>
