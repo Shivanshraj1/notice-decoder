@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Notice Decoder by ASUR</title>
+<title>Notice Decoder by SR</title>
+<meta name="description" content="Paste a college notice. Get your events, clashes caught early, and a calendar file.">
+<meta name="theme-color" content="#1F3A4B">
+<meta property="og:type" content="website"><meta property="og:title" content="Notice Decoder by SR"><meta property="og:description" content="Paste a college notice. Get your events, clashes caught early, and a calendar file."><meta property="og:url" content="https://notice-decoder-asur.vercel.app/"><meta property="og:image" content="https://notice-decoder-asur.vercel.app/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Notice Decoder by SR"><meta name="twitter:description" content="Paste a college notice. Get your events, clashes caught early, and a calendar file."><meta name="twitter:image" content="https://notice-decoder-asur.vercel.app/og-image.png">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <style>
@@ -92,6 +97,24 @@ textarea.ics{width:100%;height:140px;font:11px monospace;border-radius:12px;bord
 .tt{cursor:pointer;width:42px;height:42px;border:0;border-radius:50%;padding:8px;background:#fff;color:#000;transition:background .4s,color .4s,transform .5s var(--ez);flex:none;margin-left:auto;box-shadow:inset 0 0 0 1px var(--ln)}.tt.dk{background:#000;color:#fff}.tt.s1{background:#000;color:#fff;padding:0}.tt.s5{padding:11px}.tt:hover{transform:scale(1.08)}.tt:active{transform:scale(.94)}.tt svg{width:100%;height:100%;display:block}.tgrow{display:flex;gap:10px;flex-wrap:wrap}.tgrow .tt{margin:0}
 #dlg2{width:min(94vw,560px)}.opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 6px}.opt{border:1px solid var(--ln);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:8px;transition:transform .6s var(--ez),box-shadow .6s var(--ez)}.opt:hover{transform:translateY(-3px);box-shadow:var(--sh)}.opt b{font-size:16px;letter-spacing:-.035em}.opt small{color:var(--mu);font-size:12px;line-height:1.4}.ol{display:grid;gap:6px;margin-top:auto;max-height:150px;overflow:auto}.opt .btn{justify-content:center;text-align:center;min-height:40px;padding:6px 10px;font-size:12.5px;line-height:1.2}
 .opt.all{flex-direction:row;align-items:center;flex-wrap:wrap;gap:8px 14px;margin:0 0 6px}.opt.all small{flex:1 1 200px}.opt.all .ol{margin:0;max-height:none}
+#home .top{transition:transform .8s var(--ez),opacity .5s var(--ez),background-color .5s,border-color .5s;border-bottom:1px solid transparent;will-change:transform}#home .top.sc{background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom-color:var(--ln)}#home .top.hide{transform:translateY(-110%);opacity:0;pointer-events:none}
+.hn{font-family:var(--fs);font-style:italic;font-weight:400;letter-spacing:-.02em;color:var(--gd)}.ch{display:inline-block;animation:chIn .55s var(--ez) both}@keyframes chIn{from{opacity:0;transform:translateY(.4em);filter:blur(5px)}}.cr{display:inline-block;width:.055em;height:.78em;background:var(--gd);margin-left:.05em;vertical-align:-.04em;animation:blink .8s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+.hn.plain{font-family:inherit;font-style:normal;font-weight:inherit;letter-spacing:inherit;color:inherit}.wv{display:inline-block;opacity:0;transform:scale(.4);cursor:pointer}.wv.on{opacity:1;transform:none;transition:opacity .4s var(--ez),transform .8s var(--ez)}.wi{display:inline-block;transform-origin:70% 75%;will-change:transform}.wi.go{animation:wave 1.8s ease-in-out}@keyframes wave{0%{transform:rotate(0)}15%{transform:rotate(20deg)}30%{transform:rotate(-12deg)}45%{transform:rotate(18deg)}60%{transform:rotate(-8deg)}75%{transform:rotate(12deg)}100%{transform:rotate(0)}}
+#nmHint{font-size:12px;color:var(--mu);transition:color .3s}#nmHint.bad{color:#e5484d}#sName.bad{border-color:#e5484d;animation:shake .4s var(--ez)}
+.nmrow{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}#nmCnt{font-variant-numeric:tabular-nums;color:var(--mu);font-size:12px}.btn[disabled]{opacity:.4;cursor:not-allowed;pointer-events:none}
+.l1{display:inline-block;white-space:nowrap;max-width:100%}
+[hidden]{display:none!important}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip.on{background:var(--lime);color:#1F3A4B;border-color:var(--lime)}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}.dl,.dr{border:1px solid var(--ln);border-radius:24px;padding:16px;background:var(--pn);min-height:300px}.dl small,.dr small{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mu)}.dl p{margin:10px 0;white-space:pre-wrap;font-size:14.5px;line-height:1.7;min-height:150px}.dl2{animation:pop .7s var(--ez) both;animation-delay:var(--d,0s)}
+mark{border-radius:5px;padding:1px 4px;color:inherit}.md{background:rgba(59,130,246,.22)}.mt{background:rgba(245,158,11,.3)}.mv{background:rgba(37,211,102,.3)}
+.und{margin:8px 0;border:1px solid var(--ln);border-radius:14px;padding:8px 12px;white-space:normal}.und summary{cursor:pointer;font-weight:600;font-size:13px}.hlt{margin-top:8px;font-size:13.5px;line-height:1.7;white-space:pre-wrap}.lg{margin-top:8px;font-size:11px;display:flex;gap:6px;flex-wrap:wrap}
+.fix{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.card.skipd{opacity:.5}.card.skipd h4{text-decoration:line-through}
+.tl{position:relative;margin:6px 0 10px;border:1px solid var(--ln);border-radius:16px;background:var(--pn);overflow:hidden}.tl .tk{position:absolute;top:0;bottom:0;border-left:1px dashed var(--ln)}.tl .tk i{position:absolute;bottom:2px;left:3px;font:500 9.5px var(--ff);color:var(--mu)}
+.tl .bar{position:absolute;height:26px;border-radius:8px;background:color-mix(in srgb,var(--k) 28%,var(--pn));border:1px solid var(--k);font-size:11px;font-weight:600;padding:3px 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--tx)}
+.tl .bar.bad{background:repeating-linear-gradient(135deg,rgba(229,72,77,.38) 0 6px,rgba(229,72,77,.16) 6px 12px);border-color:#e5484d}.tl .pt{position:absolute;width:12px;height:12px;background:var(--k);transform:rotate(45deg);margin-left:-6px;border-radius:2px}
+.src{border-radius:6px;transition:background .3s,box-shadow .3s}.src.hot{background:color-mix(in srgb,var(--lime) 55%,transparent);box-shadow:0 0 0 3px color-mix(in srgb,var(--lime) 55%,transparent)}
+#eErr{color:#e5484d;font-size:12.5px;margin:0}
+@media(max-width:760px){.demo{grid-template-columns:1fr}}
 /* preloader */
 #pl{position:fixed;inset:0;z-index:100;background:#1F3A4B;color:#FAFDEE;display:grid;place-content:center;justify-items:center;gap:10px;transition:transform 1s cubic-bezier(.76,0,.24,1),border-radius 1s;will-change:transform}
 #pl.out{transform:translateY(-101%);border-radius:0 0 50% 50%/0 0 16vh 16vh}
@@ -114,19 +137,23 @@ textarea.ics{width:100%;height:140px;font:11px monospace;border-radius:12px;bord
 <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
 <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6.5-5.6 6.5-11a6.5 6.5 0 10-13 0c0 5.4 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
 </defs></svg>
-<div id="pl" aria-hidden="true"><svg class="pls" viewBox="0 0 200 60"><path pathLength="1" d="M5 42C40-8 62 74 100 30S160 2 195 28"/></svg><div class="plt"><span>Notice</span><span>Decoder</span></div><small>by ASUR</small></div>
+<div id="pl" aria-hidden="true"><svg class="pls" viewBox="0 0 200 60"><path pathLength="1" d="M5 42C40-8 62 74 100 30S160 2 195 28"/></svg><div class="plt"><span>Notice</span><span>Decoder</span></div><small>by SR</small></div>
 <div class="app">
 <nav aria-label="Main"><div class="logo"><svg><use href="#i-logo"/></svg></div><span id="pill"></span>
 <button data-v="home" class="on"><svg class="ic"><use href="#i-home"/></svg>Home</button><button data-v="decode"><svg class="ic"><use href="#i-chat"/></svg>Decode</button><button data-v="sched"><svg class="ic"><use href="#i-cal"/></svg>Schedule</button><button data-v="saved"><svg class="ic"><use href="#i-bm"/></svg>Saved</button><button data-v="sett"><svg class="ic"><use href="#i-set"/></svg>Settings</button></nav>
 <main>
-<section class="view on" id="home"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by ASUR</small></div></header>
+<section class="view on" id="home"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by SR</small></div></header>
 <div class="page" id="hp"><div class="hpw">
 <svg class="stroke" width="1278" height="2319" viewBox="0 0 1278 2319" fill="none" aria-hidden="true"><path id="strokeP" pathLength="1" stroke-dasharray="0.5 1" d="M876.605 394.131C788.982 335.917 696.198 358.139 691.836 416.303C685.453 501.424 853.722 498.43 941.95 409.714C1016.1 335.156 1008.64 186.907 906.167 142.846C807.014 100.212 712.699 198.494 789.049 245.127C889.053 306.207 986.062 116.979 840.548 43.3233C743.932 -5.58141 678.027 57.1682 672.279 112.188C666.53 167.208 712.538 172.943 736.353 163.088C760.167 153.234 764.14 120.924 746.651 93.3868C717.461 47.4252 638.894 77.8642 601.018 116.979C568.164 150.908 557 201.079 576.467 246.924C593.342 286.664 630.24 310.55 671.68 302.614C756.114 286.446 729.747 206.546 681.86 186.442C630.54 164.898 492 209.318 495.026 287.644C496.837 334.494 518.402 366.466 582.455 367.287C680.013 368.538 771.538 299.456 898.634 292.434C1007.02 286.446 1192.67 309.384 1242.36 382.258C1266.99 418.39 1273.65 443.108 1247.75 474.477C1217.32 511.33 1149.4 511.259 1096.84 466.093C1044.29 420.928 1029.14 380.576 1033.97 324.172C1038.31 273.428 1069.55 228.986 1117.2 216.384C1152.2 207.128 1188.29 213.629 1194.45 245.127C1201.49 281.062 1132.22 280.104 1100.44 272.673C1065.32 264.464 1044.22 234.837 1032.77 201.413C1019.29 162.061 1029.71 131.126 1056.44 100.965C1086.19 67.4032 1143.96 54.5526 1175.78 86.1513C1207.02 117.17 1186.81 143.379 1156.22 166.691C1112.57 199.959 1052.57 186.238 999.784 155.164C957.312 130.164 899.171 63.7054 931.284 26.3214C952.068 2.12513 996.288 3.87363 1007.22 43.58C1018.15 83.2749 1003.56 122.644 975.969 163.376C948.377 204.107 907.272 255.122 913.558 321.045C919.727 385.734 990.968 497.068 1063.84 503.35C1111.46 507.456 1166.79 511.984 1175.68 464.527C1191.52 379.956 1101.26 334.985 1030.29 377.017C971.109 412.064 956.297 483.647 953.797 561.655C947.587 755.413 1197.56 941.828 936.039 1140.66C745.771 1285.32 321.926 950.737 134.536 1202.19C-6.68295 1391.68 -53.4837 1655.38 131.935 1760.5C478.381 1956.91 1124.19 1515 1201.28 1997.83C1273.66 2451.23 100.805 1864.7 303.794 2668.89"/></svg>
 <div class="hero"><canvas id="cloud" aria-hidden="true"></canvas>
-<div class="hc"><p class="eyebrow" style="--i:0">SETU 2026 · PS-02</p><h1 style="--i:1">Hey! 👋<br>Got a <em class="hl">college notice?</em><br>Send it here!</h1><p class="lead" style="--i:2">Paste the group message. Simple rules pull out every date, time and venue, flag clashes, and hand you a calendar file.</p>
-<div class="cta" style="--i:3"><button class="btn dk" data-go="decode">Paste a notice <svg class="ic"><use href="#i-arrow"/></svg></button><button class="btn" id="demo">Try the sample notice</button></div></div>
+<div class="hc"><h1 style="--i:1"><span class="l1" id="l1">Hey<span class="hn plain" id="hn">!</span> <span class="wv" id="wv" role="img" aria-label="waving hand"><span class="wi">👋</span></span></span><br>Got a <em class="hl">college notice?</em><br>Send it here!</h1><p class="lead" style="--i:2">Paste the group message. Simple rules pull out every date, time and venue, flag clashes, and hand you a calendar file.</p>
+<div class="cta" style="--i:3"><button class="btn dk" data-go="decode">Paste a notice <svg class="ic"><use href="#i-arrow"/></svg></button><button class="btn" id="demo">Try the sample notice</button></div><p class="lead" style="--i:4;font-size:13px;opacity:.7;margin:16px 0 0">Private by design. Your notices never leave your device.</p></div>
 <canvas id="crowd" aria-hidden="true"></canvas></div>
 <div class="hm">
+<div class="sec" style="padding-top:clamp(48px,8vw,90px)"><h2 class="big rv">Messy notice in. <em>Clear plan</em> out.</h2><p class="rv" style="color:var(--mu);margin:0 0 4px;max-width:52ch">Pick a notice. This runs the same engine as the app, live.</p>
+<div class="chips rv" id="dchips"><button class="chip on" data-d="0">Exam notice</button><button class="chip" data-d="1">Lab schedule</button><button class="chip" data-d="2">Fee deadline</button></div>
+<div class="demo rv"><div class="dl"><small>The notice</small><p id="dtxt"></p><div class="lg"><mark class="md">date</mark><mark class="mt">time</mark><mark class="mv">venue</mark></div></div><div class="dr"><small>What you get</small><div id="dout"></div></div></div>
+<div class="acts rv"><button class="btn p" id="dtry">Try this in the app <svg class="ic"><use href="#i-arrow"/></svg></button></div></div>
 <div class="stats rv"><div class="stat"><b id="s1">0</b><span>events found</span></div><div class="stat"><b id="s2">0</b><span>clashes caught</span></div><div class="stat"><b id="s3">0</b><span>notices saved</span></div></div>
 <div class="sec"><h2 class="big rv">Paste it. <em>Fix it.</em> Ship it to your calendar.</h2>
 <div class="st rv"><i>01</i><div><h3>Paste it</h3><p>Drop in the notice exactly as it came on the group.</p></div></div>
@@ -134,40 +161,45 @@ textarea.ics{width:100%;height:140px;font:11px monospace;border-radius:12px;bord
 <div class="st rv"><i>03</i><div><h3>You fix it</h3><p>Every field is editable, because auto detection can be wrong.</p></div></div>
 <div class="st rv"><i>04</i><div><h3>Clash check and export</h3><p>Clashes get flagged with a tip. Then download a .ics for any calendar app.</p></div></div>
 <div class="rule rv"><b>No black box.</b> Every result has a rule behind it.<br>clash = start(A) &lt; end(B) <b>and</b> start(B) &lt; end(A)<br>a deadline clashes if it falls inside an event.</div></div></div>
-<div class="close rv"><p class="eyebrow" style="color:#C2F84F">Nobody should find out on test morning</p><h2>Decode it <em>early.</em></h2><p>One paste, one quick review, one download. Fewer missed deadlines, clashes seen before the day.</p><div class="cta"><button class="btn p" data-go="decode">Start decoding <svg class="ic"><use href="#i-arrow"/></svg></button></div><div class="m3"><span>ASUR · SETU 2026</span><span>Free for students</span><span>Colleges: yearly license</span></div></div>
+<div class="close rv"><p class="eyebrow" style="color:#C2F84F">Nobody should find out on test morning</p><h2>Decode it <em>early.</em></h2><p>One paste, one quick review, one download. Fewer missed deadlines, clashes seen before the day.</p><div class="cta"><button class="btn p" data-go="decode">Start decoding <svg class="ic"><use href="#i-arrow"/></svg></button></div><div class="m3"><span>Built by SR</span><span>Free for students</span><span>Colleges: yearly license</span></div></div>
 </div></div></section>
 
 <section class="view" id="decode"><header class="top"><div class="av on1"><svg><use href="#i-logo"/></svg></div><div><b>Notice buddy</b><small id="stat">online</small></div></header>
 <div class="scroll" id="sc"><div class="wrap" id="chat"></div></div>
-<div class="comp"><button class="chip" id="demo2" title="Use sample notice">Sample</button><textarea id="inp" rows="1" placeholder="Paste your notice here…" aria-label="Notice text"></textarea><button class="send" id="send" aria-label="Send"><svg class="ic"><use href="#i-up"/></svg></button></div></section>
+<div class="comp"><button class="chip" id="demo2" title="Use sample notice">Sample</button><button class="chip" id="cam" title="Upload a photo, PDF or Word file" aria-label="Upload a file">Upload</button><input type="file" id="img" accept=".png,.jpg,.jpeg,.webp,.pdf,.docx,.txt,.md,.csv,image/png,image/jpeg,image/webp,application/pdf" hidden><textarea id="inp" rows="1" maxlength="20000" placeholder="Paste your notice here…" aria-label="Notice text"></textarea><button class="send" id="send" aria-label="Send"><svg class="ic"><use href="#i-up"/></svg></button></div></section>
 
-<section class="view" id="sched"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by ASUR</small></div></header>
-<div class="page"><div class="pw"><h1 class="pt">My <em>schedule</em></h1><div class="acts"><button class="btn" id="chk">Check clashes</button><button class="btn p" id="expAll">Add all to calendar <svg class="ic"><use href="#i-arrow"/></svg></button></div><div id="schBody"></div></div></div></section>
+<section class="view" id="sched"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by SR</small></div></header>
+<div class="page"><div class="pw"><h1 class="pt">My <em>schedule</em></h1><div class="acts"><button class="btn" id="chk">Check clashes</button><button class="btn" id="waAll">Share on WhatsApp</button><button class="btn p" id="expAll">Add all to calendar <svg class="ic"><use href="#i-arrow"/></svg></button></div><div id="schBody"></div></div></div></section>
 
-<section class="view" id="saved"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by ASUR</small></div></header>
+<section class="view" id="saved"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by SR</small></div></header>
 <div class="page"><div class="pw"><h1 class="pt">Saved <em>notices</em></h1><div id="savBody"></div></div></div></section>
 
-<section class="view" id="sett"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by ASUR</small></div></header>
+<section class="view" id="sett"><header class="top"><div class="av"><svg><use href="#i-logo"/></svg></div><div><b>Notice Decoder</b><small>by SR</small></div></header>
 <div class="page"><div class="pw"><h1 class="pt"><em>Settings</em></h1><div class="set">
-<label>What should I call you?<input id="sName" placeholder="Your name"></label>
+<label>What should I call you?<input id="sName" placeholder="Your name" maxlength="20" autocomplete="off" autocapitalize="words" spellcheck="false"><div class="nmrow"><small id="nmHint">Letters and spaces only. No numbers or symbols.</small><small id="nmCnt">0/20</small></div></label><div class="acts" style="margin-top:-6px"><button class="btn p" id="saveName">Save name</button></div>
 <label>Default event length (when a notice gives only a start time)<select id="sDur"><option value="30">30 minutes</option><option value="60">1 hour</option><option value="90">1.5 hours</option><option value="120">2 hours</option></select></label>
-<label style="display:flex;gap:10px;align-items:center;grid-template-columns:none"><input type="checkbox" id="sRem" style="width:auto;min-height:0"> Add a 30-minute reminder to calendar files</label>
+<label>Calendar reminders<select id="sRem"><option value="none">No reminder</option><option value="1h">1 hour before</option><option value="1d">1 day before</option><option value="both">1 day and 1 hour before</option></select></label>
 <label>Dark / light toggle style<select id="sTS"><option value="1">Yin-yang</option><option value="2">Sun and moon</option><option value="3">Dotted sun</option><option value="4">Light bulb</option><option value="5">Eclipse</option></select></label><div class="tgrow" id="tgRow" aria-label="Toggle previews"></div><small style="color:var(--mu)">Effects adapted from Skiper UI and toggles.dev by Alfie Jones.</small>
-<button class="btn r" id="wipe">Clear all my data</button></div></div></div></section>
+<button class="btn" id="inst" hidden>Install this app</button><button class="btn r" id="wipe">Clear all my data</button></div></div></div></section>
 </main></div>
 
 <dialog id="dlg"><form method="dialog" id="frm"><h3 style="margin:0">Edit event</h3>
-<label>Title<input id="eT" required></label>
+<label>Title<input id="eT" required maxlength="80"></label>
 <div class="g2"><label>Type<select id="eY"><option>Test</option><option>Lecture</option><option>Deadline</option><option>Event</option></select></label><label>Date<input type="date" id="eD" required></label></div>
 <div class="g2"><label>Starts<input type="time" id="eS"></label><label>Ends<input type="time" id="eE"></label></div>
-<label>Venue<input id="eV"></label>
+<label>Venue<input id="eV" maxlength="60"></label><p id="eErr" role="alert"></p>
 <div class="acts"><button type="submit" class="btn p">Save</button><button type="button" class="btn" id="eC">Cancel</button><button type="button" class="btn r" id="eX">Delete</button></div></form></dialog>
 <dialog id="dlg2"><div id="d2"></div></dialog>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const SAMPLE='All III-year CSE students: Internal Test 2 will be held on 13 Nov 2026 from 10:00 AM to 11:30 AM in Room 204. Lab records must be submitted to the department office by 12:00 noon on 13 Nov. A guest lecture on “AI in Healthcare” is scheduled on 13 Nov, 11:00 AM to 12:30 PM, Seminar Hall.';
-let S={events:[],notices:[],set:{dur:60,rem:true,name:''}},chat=[],busy=false,uid=Date.now();
+let S={events:[],notices:[],set:{dur:60,remind:'1h',name:''}},chat=[],busy=false,uid=Date.now();
 try{const r=localStorage.getItem('asur-nd');if(r)S=Object.assign(S,JSON.parse(r))}catch(e){}
+const MAXPN=60,MAXEV=300,MAXNO=50,MAXTXT=20000;
+function cleanState(){S.events=(Array.isArray(S.events)?S.events:[]).filter(e=>e&&typeof e==='object'&&typeof e.title==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(e.date||'')).slice(0,MAXEV).map(e=>({id:String(e.id||'e'+(++uid)).slice(0,30),title:e.title.slice(0,80),type:['Test','Lecture','Deadline','Event'].includes(e.type)?e.type:'Event',date:e.date,start:/^\d{2}:\d{2}$/.test(e.start)?e.start:'',end:/^\d{2}:\d{2}$/.test(e.end)?e.end:'',venue:String(e.venue||'').slice(0,60),notice:String(e.notice||''),src:String(e.src||'').slice(0,300),skip:!!e.skip}));
+ S.notices=(Array.isArray(S.notices)?S.notices:[]).filter(n=>n&&typeof n.text==='string'&&n.id).slice(0,MAXNO).map(n=>({id:String(n.id),text:n.text.slice(0,MAXTXT),at:+n.at||Date.now(),count:+n.count||0}));
+ const st=S.set&&typeof S.set==='object'?S.set:{};S.set={dur:[30,60,90,120].includes(+st.dur)?+st.dur:60,remind:['none','1h','1d','both'].includes(st.remind)?st.remind:(st.rem===false?'none':'1h'),name:typeof st.name==='string'?st.name:'',theme:st.theme==='dark'||st.theme==='light'?st.theme:undefined,tstyle:[1,2,3,4,5].includes(+st.tstyle)?+st.tstyle:undefined}}
+cleanState();
 const save=()=>{try{localStorage.setItem('asur-nd',JSON.stringify(S))}catch(e){}};
 const esc=t=>String(t??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pad=n=>String(n).padStart(2,'0'),now=()=>{const d=new Date();let h=d.getHours();return (h%12||12)+':'+pad(d.getMinutes())+(h<12?' AM':' PM')};
@@ -182,16 +214,28 @@ const M='jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec';
 const R1=new RegExp(`\\b(\\d{1,2})(?:st|nd|rd|th)?\\s+(?:of\\s+)?(${M})[a-z]*\\.?,?\\s*(\\d{4})?`,'i'),
 R2=new RegExp(`\\b(${M})[a-z]*\\.?\\s+(\\d{1,2})(?:st|nd|rd|th)?\\b,?\\s*(\\d{4})?`,'i'),
 R3=/\b(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{2,4})\b/;
+const WD=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'],ABB=['sun','mon','tue','wed','thu','fri','sat'];
+function relDate(s){const now=new Date();now.setHours(0,0,0,0);const out=[];
+ let m=s.match(/\b(day after tomorrow|tomorrow|tmrw|today|aaj|kal|parso)\b/i);if(m){const w=m[1].toLowerCase();out.push({i:m.index,len:m[0].length,add:(w==='today'||w==='aaj')?0:(/day after|parso/.test(w)?2:1)})}
+ m=s.match(/\b(?:(?:next|this|coming)\s+)?(sunday|monday|tuesday|wednesday|thursday|friday|saturday)\b/i);if(m)out.push({i:m.index,len:m[0].length,wd:WD.indexOf(m[1].toLowerCase())});
+ m=s.match(/\b(Sun|Mon|Tue|Tues|Wed|Thu|Thur|Thurs|Fri|Sat)\b/);if(m)out.push({i:m.index,len:m[0].length,wd:ABB.indexOf(m[1].slice(0,3).toLowerCase())});
+ if(!out.length)return null;out.sort((a,b)=>a.i-b.i);const r=out[0],d=new Date(now);
+ if(r.add!=null)d.setDate(d.getDate()+r.add);else{let k=(r.wd-d.getDay()+7)%7;if(k===0)k=7;d.setDate(d.getDate()+k)}
+ return{i:r.i,len:r.len,iso:`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`,hy:true}}
 function findDate(s,Y){let best=null;
  for(const [r,k] of [[R1,1],[R2,2],[R3,3]]){const m=s.match(r);if(!m)continue;let d,mo,y;
   if(k===1){d=+m[1];mo=M.split('|').indexOf(m[2].toLowerCase())+1;y=m[3]}
   else if(k===2){mo=M.split('|').indexOf(m[1].toLowerCase())+1;d=+m[2];y=m[3]}
   else{d=+m[1];mo=+m[2];y=m[3];if(y.length===2)y='20'+y}
   if(d<1||d>31||mo<1||mo>12)continue;
-  if(!best||m.index<best.i)best={i:m.index,len:m[0].length,iso:`${y||Y}-${pad(mo)}-${pad(d)}`}}
+  if(!best||m.index<best.i)best={i:m.index,len:m[0].length,iso:`${y||Y}-${pad(mo)}-${pad(d)}`,hy:!!y}}
+ if(!best){const rd=relDate(s);if(rd)best=rd}
  return best}
 const cv=(h,m,ap)=>{h=+h;m=+(m||0);if(ap==='pm'&&h<12)h+=12;if(ap==='am'&&h===12)h=0;return h*60+m};
-function times(s){s=s.replace(/(?:12(?::00)?\s*)?\bnoon\b/gi,'12:00 pm').replace(/([ap])\.m\./gi,'$1m');
+function times(s){const mod=/subah|morning/i.test(s)?'am':(/shaam|sham|evening|raat|night|dopahar|afternoon/i.test(s)?'pm':null),apf=h=>h===12?'pm':(mod||(h>=7&&h<=11?'am':'pm'));
+ s=s.replace(/baje\s+(?=(?:se|to)\b)/gi,'');
+ s=s.replace(/(\d{1,2})(?:[:.](\d{2}))?\s*(?:se|to|-)\s*(\d{1,2})(?:[:.](\d{2}))?\s*baje/gi,(m,a,am,b,bm)=>`${a}:${am||'00'} ${apf(+a)} to ${b}:${bm||'00'} ${apf(+b)}`).replace(/(\d{1,2})(?:[:.](\d{2}))?\s*baje/gi,(m,a,am)=>`${a}:${am||'00'} ${apf(+a)}`);
+ s=s.replace(/(?:12(?::00)?\s*)?\bnoon\b/gi,'12:00 pm').replace(/([ap])\.m\./gi,'$1m');
  const T='(\\d{1,2})(?:[:.](\\d{2}))?';
  const r=s.match(new RegExp(`${T}\\s*(am|pm)?\\s*(?:to|till|until|-|–|—)\\s*${T}\\s*(am|pm)?`,'i'));
  if(r&&(r[2]||r[3]||r[5]||r[6])){const[,h1,m1,a1,h2,m2,a2]=r.map(x=>x&&x.toLowerCase?x.toLowerCase():x);let a,b;
@@ -209,21 +253,21 @@ function decode(text){const raw=text.replace(/[ \t]+/g,' ').trim(),ym=raw.match(
  for(const sent of lines.flatMap(l=>l.split(/(?<=[.!?])\s+(?=[A-Z“"‘(])/)).flatMap(x=>x.split(';')).flatMap(x=>splitDates(x,Y)).map(x=>x.trim()).filter(Boolean)){
   const d=findDate(sent,Y);let s2=d?sent.slice(0,d.i)+' '+sent.slice(d.i+d.len):sent;
   const q=sent.match(/[“"‘]([^”"’]+)[”"’]/);s2=s2.replace(/[“"‘][^”"’]+[”"’]/g,' ');
-  const tt=times(s2);if(!d&&!tt)continue;const date=d?d.iso:last;if(!date)continue;last=date;
+  const tt=times(s2);if(!d&&!tt)continue;let date=d?d.iso:last;if(!date)continue;if(d&&!d.hy&&!ym){const t0=new Date();t0.setDate(t0.getDate()-60);if(new Date(date+'T00:00')<t0)date=(+date.slice(0,4)+1)+date.slice(4)}last=date;
   let type='Event';if(/\b(submit\w*|deadline|due|last date)\b/i.test(sent))type='Deadline';else if(/\b(test|exam\w*|quiz|viva|assessment|mid-?sem)\b/i.test(sent))type='Test';else if(/\b(lecture|seminar|talk|workshop|webinar|session|orientation|meeting)\b/i.test(sent))type='Lecture';
+  const vm=s2.match(/\b(?:in|at|to)\s+(?:the\s+)?((?:[A-Za-z]+\s+){0,2}(?:Room|Hall|Lab|Office|Auditorium|Library|Block|Ground)(?:\s+\d+\w*(?!\s*(?:baje|am|pm)\b))?)/i);
   let title,m;
   if(type==='Test'){m=sent.match(/\b((?:[A-Za-z][\w-]*\s+)?(?:test|exam\w*|quiz|viva|assessment|mid-?sem)(?:\s*\d+)?)/i);title=cap(m[1].replace(/^(the|a|an|our|your|all)\s+/i,''))}
-  else if(type==='Lecture'){m=sent.match(/\b((?:guest\s+)?(?:lecture|seminar|talk|workshop|webinar|session|orientation|meeting))\b/i);title=cap(m[1])+(q?': '+q[1]:'')}
+  else if(type==='Lecture'){m=sent.match(/\b((?:[a-z]+\s+){0,2}(?:lecture|seminar|talk|workshop|webinar|session|orientation|meeting))\b/i);const tw=m[1].split(/\s+/);while(tw.length>1&&/^(a|an|the|our|your|all|this|that|will|be|is|are|on|at|in|and|for|to|by|there|scheduled|held)$/i.test(tw[0]))tw.shift();title=cap(tw.join(' '))+(q?': '+q[1]:'')}
   else if(type==='Deadline'){m=sent.match(/\b((?:[a-z]+\s+)?(?:records?|assignments?|reports?|projects?|forms?|fees?|files?))\b/i);title=m?cap(m[1].replace(/^(the|your|all|and)\s+/i,''))+' submission':'Deadline'}
-  else{const w=s2.replace(/\b\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)?/gi,' ').replace(/\b(on|at|by|from|to|till|until|the|in|and|a|an|is|will|be|held|scheduled)\b/gi,' ').replace(/[^\w\s-]/g,' ').trim().split(/\s+/).filter(Boolean).slice(0,5).join(' ');title=w?cap(w):'Event'}
-  const vm=s2.match(/\b(?:in|at|to)\s+(?:the\s+)?((?:[A-Za-z]+\s+){0,2}(?:Room|Hall|Lab|Office|Auditorium|Library|Block|Ground)(?:\s+\d+\w*)?)/i);
-  let st='',en='';if(tt){if(tt.e!=null){st=hm(tt.s);en=hm(tt.e)}else if(tt.pt||type==='Deadline'){st=en=hm(tt.s)}else{st=hm(tt.s);en=hm(Math.min(tt.s+(+S.set.dur),1439))}}
-  out.push({id:'e'+(++uid),title,type,date,start:st,end:en,venue:vm?cap(vm[1].trim()):(s2.match(/\b((?:Seminar|Conference|Main|Mini)\s+Hall|(?:Room|Lab|Hall|Auditorium|Block)\s+\d+\w*|Auditorium|Library)\b/)||[,''])[1]})}
+  else if(/\b(holiday|closed|no classes)\b/i.test(sent))title='Holiday';else{const w=s2.replace(vm?vm[0]:/\b((?:Seminar|Conference|Main|Mini)\s+Hall|(?:Room|Lab|Hall|Auditorium|Block)\s+\d+\w*(?!\s*(?:baje|am|pm)\b)|Auditorium|Library)\b/,' ').replace(/\b\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)?\b/gi,' ').replace(/\b(on|at|by|from|to|till|until|the|in|and|a|an|is|will|be|held|scheduled|baje|se|subah|shaam|raat)\b/gi,' ').replace(/[^\w\s-]/g,' ').trim().split(/\s+/).filter(Boolean).slice(0,5).join(' ');title=w?cap(w):'Event'}
+    let st='',en='';if(tt){if(tt.e!=null){st=hm(tt.s);en=hm(tt.e)}else if(tt.pt||type==='Deadline'){st=en=hm(tt.s)}else{st=hm(tt.s);en=hm(Math.min(tt.s+(+S.set.dur),1439))}}
+  out.push({id:'e'+(++uid),src:sent.trim().slice(0,300),title,type,date,start:st,end:en,venue:vm?cap(vm[1].replace(/\s+/g,' ').trim()):(s2.match(/\b((?:Seminar|Conference|Main|Mini)\s+Hall|(?:Room|Lab|Hall|Auditorium|Block)\s+\d+\w*(?!\s*(?:baje|am|pm)\b)|Auditorium|Library)\b/)||[,''])[1]})}
  return out}
 
 /* ---------- clash rule ---------- */
 const sg=e=>[e.title,e.date,e.start,e.end].join('|');
-function clashes(list){const r=[],ev=list.filter(e=>e.start).filter((e,i,a)=>a.findIndex(x=>sg(x)===sg(e))===i);
+function clashes(list){const r=[],ev=list.filter(e=>e.start&&!e.skip).filter((e,i,a)=>a.findIndex(x=>sg(x)===sg(e))===i);
  for(let i=0;i<ev.length;i++)for(let j=i+1;j<ev.length;j++){let A=ev[i],B=ev[j];if(A.date!==B.date)continue;
   const as=mn(A.start),ae=mn(A.end),bs=mn(B.start),be=mn(B.end),pa=isPt(A),pb=isPt(B);
   if(pa&&pb)continue;
@@ -236,48 +280,54 @@ const sh=e=>e.title.split(':')[0].toLowerCase();const clashOf=n=>clashes(S.event
 
 /* ---------- ICS ---------- */
 const ie=t=>String(t).replace(/[\\;,]/g,m=>'\\'+m).replace(/\n/g,'\\n'),ds=(d,t)=>d.replace(/-/g,'')+(t?'T'+t.replace(':','')+'00':'');
-function ics(list){const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//ASUR//Notice Decoder//EN','CALSCALE:GREGORIAN'],st=new Date().toISOString().replace(/[-:]|\.\d+/g,'');
+function ics(list){const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SR//Notice Decoder//EN','CALSCALE:GREGORIAN'],st=new Date().toISOString().replace(/[-:]|\.\d+/g,'');
  for(const e of list){L.push('BEGIN:VEVENT','UID:'+e.id+'@notice-decoder.asur','DTSTAMP:'+st,'SUMMARY:'+ie(e.title));
   if(!e.start){const n=new Date(e.date+'T00:00');n.setDate(n.getDate()+1);L.push('DTSTART;VALUE=DATE:'+ds(e.date),'DTEND;VALUE=DATE:'+n.toISOString().slice(0,10).replace(/-/g,''))}
   else{let en=e.end;if(isPt(e))en=hm(Math.min(mn(e.start)+15,1439));L.push('DTSTART:'+ds(e.date,e.start),'DTEND:'+ds(e.date,en))}
-  if(e.venue)L.push('LOCATION:'+ie(e.venue));L.push('DESCRIPTION:'+ie(e.type+(isPt(e)?' (deadline time)':'')+' · from Notice Decoder by ASUR'));
-  if(S.set.rem)L.push('BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:'+ie(e.title),'END:VALARM');L.push('END:VEVENT')}
+  if(e.venue)L.push('LOCATION:'+ie(e.venue));L.push('DESCRIPTION:'+ie(e.type+(isPt(e)?' (deadline time)':'')+' · from Notice Decoder by SR'));
+  {const rm=S.set.remind;[rm==='1h'||rm==='both'?'-PT1H':'',rm==='1d'||rm==='both'?'-P1D':''].filter(Boolean).forEach(t=>L.push('BEGIN:VALARM','TRIGGER:'+t,'ACTION:DISPLAY','DESCRIPTION:'+ie(e.title),'END:VALARM'))}L.push('END:VEVENT')}
  L.push('END:VCALENDAR');return L.join('\r\n')}
 function gcal(e){const a=e.start?ds(e.date,e.start):ds(e.date),b=e.start?ds(e.date,isPt(e)?hm(Math.min(mn(e.start)+15,1439)):e.end):ds(e.date);
  return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent(e.title)+'&dates='+a+'/'+b+'&location='+encodeURIComponent(e.venue||'')}
-async function exportIcs(list){if(!list.length)return toast('Nothing to export yet');const data=ics(list);let ok=false;
+let exporting=false,lastAll=0;async function exportIcs(list){list=list.filter(e=>!e.skip);if(!list.length)return toast('Nothing to export yet');if(exporting)return;exporting=true;setTimeout(()=>exporting=false,1500);const data=ics(list);let ok=false;
  try{const dl=window.claude&&await claude.use('downloads');
   if(dl){try{await dl.save({filename:'notice-decoder.ics',data});ok=true}catch(er){if(er&&er.code==='declined')return;fallback(list,data);return}}
   else{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'text/calendar'}));a.download='notice-decoder.ics';document.body.appendChild(a);a.click();a.remove();ok=true}}catch(e){fallback(list,data);return}
  if(ok)success('Calendar file ready!','Open it to add '+list.length+' event'+(list.length>1?'s':'')+' to your calendar.')}
 function fallback(list,data){$('#d2').innerHTML=`<h3 style="margin:0 0 6px">Your calendar file</h3><p style="margin:0 0 8px;color:var(--mu);font-size:13px">This view can't save .ics files directly. Copy this text into a file named notice-decoder.ics, or add events one by one.</p><textarea class="ics" readonly id="icsT">${esc(data)}</textarea><div class="acts"><button class="btn p" id="cp">Copy .ics text</button></div>${list.map(e=>`<div><a href="${gcal(e)}" target="_blank" rel="noopener" style="color:var(--gd)">Google Calendar: ${esc(e.title)}</a></div>`).join('')}<div class="acts"><button class="btn" id="cl">Close</button></div>`;
  $('#dlg2').showModal();$('#cl').onclick=()=>$('#dlg2').close();$('#cp').onclick=async()=>{try{await navigator.clipboard.writeText(data)}catch(e){$('#icsT').select();document.execCommand('copy')}success('Copied!','Paste it into a .ics file.')}}
-function chooser(list){if(!list.length)return toast('Nothing to add yet');const n=list.length,d=$('#dlg2');
+function chooser(list){list=list.filter(e=>!e.skip);if(!list.length)return toast('Nothing to add yet');const n=list.length,d=$('#dlg2');
  $('#d2').innerHTML=`<h3 style="margin:0;font-size:22px;letter-spacing:-.04em">Add ${n} event${n>1?'s':''} to your calendar</h3><p style="margin:4px 0 0;color:var(--mu);font-size:13px">Pick how you want to proceed.</p><div class="opts"><div class="opt"><b>Add to calendar</b><small>Opens Google Calendar with the details already filled in${n>1?', one event at a time':''}.</small><div class="ol">${list.map(e=>`<a class="btn p" href="${gcal(e)}" target="_blank" rel="noopener">${n>1?esc(e.title):'Add to Google Calendar'}</a>`).join('')}</div></div><div class="opt"><b>Download .ics file</b><small>Works with Apple, Outlook, Google and more. Adds ${n>1?'all events':'the event'} at once.</small><div class="ol"><button class="btn dk" id="icsGo">Get .ics file</button></div></div></div>${n>1?`<div class="opt all"><b>Add all ${n} events in one click</b><small>Opens every event in Google Calendar, one tab each. Allow pop-ups if your browser asks.</small><div class="ol"><button class="btn p" id="allGo">Add all ${n} events</button></div></div>`:''}<div class="acts"><button class="btn" id="cl">Cancel</button></div>`;
- if(!d.open)d.showModal();$('#cl').onclick=()=>d.close();$('#icsGo').onclick=()=>{d.close();exportIcs(list)};const ag=$('#allGo');if(ag)ag.onclick=()=>{let bl=0;list.forEach(e=>{const w=window.open(gcal(e),'_blank');if(w){try{w.opener=null}catch(_){}}else bl++});d.close();toast(bl?'Pop-ups were blocked. Allow them, or use the .ics file.':'Opened '+n+' events in Google Calendar')}}
+ if(!d.open)d.showModal();$('#cl').onclick=()=>d.close();$('#icsGo').onclick=()=>{d.close();exportIcs(list)};const ag=$('#allGo');if(ag)ag.onclick=()=>{if(n>10){toast('Too many for one click. Use the .ics file.');return}if(Date.now()-lastAll<4000)return;lastAll=Date.now();let bl=0;list.forEach(e=>{const w=window.open(gcal(e),'_blank');if(w){try{w.opener=null}catch(_){}}else bl++});d.close();toast(bl?'Pop-ups were blocked. Allow them, or use the .ics file.':'Opened '+n+' events in Google Calendar')}}
 function success(a,b){$('#d2').innerHTML=`<div class="succ"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="30"/><path d="M26 41l10 10 19-21"/></svg><b style="font-size:18px">${esc(a)}</b><span style="color:var(--mu)">${esc(b)}</span></div>`;const d=$('#dlg2');if(!d.open)d.showModal();setTimeout(()=>d.open&&d.close(),2000)}
 function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2200)}
 
 /* ---------- chat ---------- */
 const I=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`,AV='<div class="av mini"><svg><use href="#i-logo"/></svg></div>';let shown=0;
-function evCard(e,bad){const mon=e.date?new Date(e.date+'T00:00').toLocaleDateString('en-IN',{month:'short'}):'—',d=e.date?+e.date.slice(8):'–';return `<div class="card ${e.type}"><div class="dt"><b>${d}</b><span>${mon}</span></div><div class="ci"><div class="ct"><span class="tg">${e.type}${bad?' · clash':''}</span><button class="edit" data-edit="${e.id}">Edit</button></div><h4>${esc(e.title)}</h4><div class="meta"><span>${I('clock')}${tm(e)}</span><span>${I('pin')}${esc(e.venue)||'Venue not found'}</span></div></div></div>`}
-const cCard=c=>`<div class="warn"><b>${esc(c.msg)}</b><small>${esc(c.tip)}</small></div>`;
+function evCard(e,bad,ro){const mon=e.date?new Date(e.date+'T00:00').toLocaleDateString('en-IN',{month:'short'}):'—',d=e.date?+e.date.slice(8):'–';return `<div class="card ${e.type}${e.skip?' skipd':''}" data-eid="${e.id}"><div class="dt"><b>${d}</b><span>${mon}</span></div><div class="ci"><div class="ct"><span class="tg">${e.type}${e.skip?' · skipped':bad?' · clash':''}</span>${ro?'':(e.skip?`<button class="edit" data-undo="${e.id}">Undo</button>`:`<button class="edit" data-edit="${e.id}" title="Something wrong? Fix it">Edit</button>`)}</div><h4>${esc(e.title)}</h4><div class="meta"><span>${I('clock')}${tm(e)}</span><span>${I('pin')}${esc(e.venue)||'Venue not found'}</span></div></div></div>`}
+const cCard=(c,ro)=>`<div class="warn"><b>${esc(c.msg)}</b><small>${esc(c.tip)}</small>${!ro&&!isPt(c.a)&&!isPt(c.b)?`<div class="fix"><button class="edit" data-drop="${c.b.id}">Keep ${esc(sh(c.a))}</button><button class="edit" data-drop="${c.a.id}">Keep ${esc(sh(c.b))}</button></div>`:''}</div>`;
 function render(){const html=chat.map((m,ix)=>{const fr=ix>=shown?' fresh':'';
  if(m.r==='me')return `<div class="row me${fr}"><div class="bub">${esc(m.t)}<span class="ts">${m.ts} ✓✓</span></div></div>`;
- let b='';if(m.t)b+=esc(m.t);
- if(m.n){if(m.show==='clash'){const c=clashOf(m.n);b+=c.length?c.map(cCard).join(''):'<div class="ok">All clear! No clashes found. You\'re good to go.</div>'}
-  else{const bd=new Set(clashes(S.events).flatMap(c=>[c.a.id,c.b.id]));b+=S.events.filter(e=>e.notice===m.n).map(e=>evCard(e,bd.has(e.id))).join('');const c=clashOf(m.n);if(c.length)b+=c.map(cCard).join('')}
-  if(m.show!=='clash')b+=`<div class="acts"><button class="btn" data-chk="${m.n}">Check clashes</button><button class="btn" data-go="sched">View my schedule</button><button class="btn p" data-cal="${m.n}">Add to calendar</button></div>`}
+ let b='';if(m.greet)b+=esc(greetText());else if(m.t)b+=esc(m.t);
+ if(m.n){if(m.show==='clash'){const c=clashOf(m.n);b+=c.length?c.map(c=>cCard(c)).join(''):'<div class="ok">All clear! No clashes found. You\'re good to go.</div>'}
+  else{const bd=new Set(clashes(S.events).flatMap(c=>[c.a.id,c.b.id]));b+=S.events.filter(e=>e.notice===m.n).map(e=>evCard(e,bd.has(e.id))).join('');const c=clashOf(m.n);if(c.length)b+=c.map(c=>cCard(c)).join('')}
+  if(m.show!=='clash')b+=und(m.n)+`<div class="acts"><button class="btn" data-chk="${m.n}">Check clashes</button><button class="btn" data-go="sched">View my schedule</button><button class="btn" data-wa="${m.n}">Share on WhatsApp</button><button class="btn p" data-cal="${m.n}">Add to calendar</button></div>`}
  return `<div class="row${fr}">${AV}<div class="bub ${m.n?'wide':''}">${b}<span class="ts">${m.ts}</span></div></div>`}).join('');
  shown=chat.length;$('#chat').innerHTML=html+(busy?`<div class="row fresh">${AV}<div class="bub"><div class="typing"><span></span><span></span><span></span></div><span class="ts" id="step">Reading your notice...</span></div></div>`:'');
  const sc=$('#sc');sc.scrollTo({top:sc.scrollHeight,behavior:'smooth'})}
-function hello(){if(chat.length)return;const n=S.set.name?', '+S.set.name:'';chat.push({r:'bot',t:`Hey${n}! 👋 Got a college notice? Send it here!\nPaste the whole message and I'll pull out every date, time and venue.`,ts:now()})}
-async function send(text){text=(text||'').trim();if(!text||busy)return;go('decode');hello();chat.push({r:'me',t:text,ts:now()});busy=true;$('#stat').textContent='typing…';render();
+const greetText=()=>`Hey${S.set.name?', '+S.set.name:''}! 👋 Got a college notice? Send it here!\nPaste the whole message and I'll pull out every date, time and venue.`;
+function hello(){if(chat.length)return;chat.push({r:'bot',greet:true,ts:now()})}
+const sends=[];let lastTxt='',lastAt=0;
+function cleanNotice(t){return String(t||'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u200b-\u200f\u202a-\u202e\u2060\ufeff]/g,'').replace(/\r/g,'').replace(/\n{3,}/g,'\n\n').trim().slice(0,MAXTXT)}
+function sendGate(t){if(t.length<6)return 'That looks too short to be a notice. Paste the whole message.';if(!/\p{L}/u.test(t))return 'I could not find any words in that. Paste the notice text.';const n=Date.now();while(sends.length&&n-sends[0]>60000)sends.shift();
+ if(t.toLowerCase()===lastTxt&&n-lastAt<20000)return 'You just sent that one. I already decoded it.';if(sends.length&&n-sends[sends.length-1]<1500)return 'Easy there! Give me a second before the next one.';if(sends.length>=8)return 'That is a lot of notices in a minute. Please wait a little and try again.';return ''}
+async function send(text,label){text=cleanNotice(text);if(!text||busy)return;{const g=sendGate(text);if(g){go('decode');hello();chat.push({r:'bot',t:g,ts:now()});render();return}}sends.push(Date.now());lastTxt=text.toLowerCase();lastAt=Date.now();go('decode');hello();chat.push({r:'me',t:label||text,ts:now()});busy=true;$('#stat').textContent='typing…';render();
  const steps=['Reading your notice...','Spotting dates and times...','Checking for clashes...'];let i=0;const iv=setInterval(()=>{const s=$('#step');if(s)s.textContent=steps[++i%3]},650);
  await new Promise(r=>setTimeout(r,1900));clearInterval(iv);busy=false;$('#stat').textContent='online';
- const all0=decode(text),have=new Set(S.events.map(sg)),ev=all0.filter(e=>{const k=sg(e);if(have.has(k))return false;have.add(k);return true});
+ let all0=[];try{all0=decode(text)}catch(err){console.error(err)}const have=new Set(S.events.map(sg)),ev=all0.filter(e=>{const k=sg(e);if(have.has(k))return false;have.add(k);return true}).slice(0,MAXPN);
  if(all0.length&&!ev.length){chat.push({r:'bot',t:'I already have all of these events in your schedule, so I did not add them twice. Open My schedule to see them.',ts:now()});render();return}
  if(!ev.length){chat.push({r:'bot',t:'Hmm, I couldn\'t spot a date or time in that. Try including something like "13 Nov, 10:00 AM to 11:30 AM". I never guess, so I need a date to work with.',ts:now()});render();return}
+ if(S.events.length+ev.length>MAXEV||S.notices.length>=MAXNO){chat.push({r:'bot',t:'Your schedule is full (300 events or 50 notices). Delete some from Saved or My schedule first.',ts:now()});render();return}
  const n='n'+(++uid);ev.forEach(e=>e.notice=n);S.events.push(...ev);S.notices.unshift({id:n,text,at:Date.now(),count:ev.length});save();
  const c=clashOf(n);chat.push({r:'bot',n,t:`Found ${ev.length} thing${ev.length>1?'s':''} in your notice and saved it.${c.length?` I also spotted ${c.length} clash${c.length>1?'es':''}.`:' No clashes so far.'} Tap Edit on anything I got wrong.`,ts:now()});render();stats();toast('Notice saved')}
 const sendBox=()=>{const v=$('#inp').value;$('#inp').value='';$('#inp').style.height='';send(v)};
@@ -286,25 +336,37 @@ $('#inp').addEventListener('input',e=>{e.target.style.height='auto';e.target.sty
 $('#demo').onclick=$('#demo2').onclick=()=>send(SAMPLE);
 
 /* ---------- navigation & views ---------- */
-function go(v){$$('.view').forEach(x=>x.classList.toggle('on',x.id===v));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));window.HV=v==='home';pill();if(v==='home')dispatchEvent(new Event('resize'));
+function go(v){$$('.view').forEach(x=>x.classList.toggle('on',x.id===v));$$('nav button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));window.HV=v==='home';pill();if(v==='home')dispatchEvent(new Event('resize'));if(v==='home'&&typeof playDemo==='function'&&dAuto&&dVis)playDemo(dI);if(v==='home'&&nameNew){nameNew=false;homeName(.45)}
  if(v==='decode'){hello();render()}if(v==='sched')sch();if(v==='saved')sav();if(v==='home')stats()}
 function stats(){$('#s1').textContent=S.events.length;$('#s2').textContent=clashes(S.events).length;$('#s3').textContent=S.notices.length}
+const TK={Test:'#e5484d',Lecture:'#3b82f6',Deadline:'#f59e0b',Event:'#25D366'};
+function tl(evs){const t=evs.filter(e=>e.start&&!e.skip).sort((a,b)=>mn(a.start)-mn(b.start));if(!t.length)return'';
+ let lo=Math.min(...t.map(e=>mn(e.start))),hi=Math.max(...t.map(e=>mn(e.end||e.start)));lo=Math.floor(Math.max(0,lo-30)/60)*60;hi=Math.ceil(Math.min(1440,hi+30)/60)*60;if(hi-lo<240)hi=Math.min(1440,lo+240);if(hi-lo<240)lo=Math.max(0,hi-240);
+ const sp=hi-lo,ln=[],bad=new Set(clashes(t).flatMap(c=>[c.a.id,c.b.id])),it=t.map(e=>{const s=mn(e.start),en=isPt(e)?s:mn(e.end);let l=ln.findIndex(x=>x<=s);if(l<0){l=ln.length;ln.push(0)}ln[l]=Math.max(en,s+(isPt(e)?20:0));return{e,s,en,l}});
+ const step=sp>600?120:60;let tk='';for(let m=lo;m<=hi;m+=step){const hh=m/60;tk+=`<div class="tk" style="left:${(m-lo)/sp*100}%"><i>${(hh%12)||12}${hh<12||hh===24?'a':'p'}</i></div>`}
+ return `<div class="tl" style="height:${ln.length*34+28}px" role="img" aria-label="Timeline of the day">${tk}`+it.map(({e,s,en,l})=>{const k=TK[e.type]||TK.Event,L=(s-lo)/sp*100;return isPt(e)?`<div class="pt" title="${esc(e.title)} by ${f12(e.start)}" style="left:${L}%;top:${12+l*34}px;--k:${k}"></div>`:`<div class="bar${bad.has(e.id)?' bad':''}" title="${esc(e.title)}" style="left:${L}%;width:${Math.max((en-s)/sp*100,3)}%;top:${6+l*34}px;--k:${k}">${esc(e.title)}</div>`}).join('')+'</div>'}
 function sch(){const ev=[...S.events].sort((a,b)=>(a.date+(a.start||'')).localeCompare(b.date+(b.start||'')));
- if(!ev.length){$('#schBody').innerHTML='<div class="empty">Nothing here yet. Decode a notice and your events will show up.</div>';return}
- const cl=clashes(ev),bad=new Set(cl.flatMap(c=>[c.a.id,c.b.id]));let h=cl.length?`<h2>${cl.length} clash${cl.length>1?'es':''} to fix</h2>`+cl.map(cCard).join(''):'<div class="ok">All clear! No clashes in your schedule.</div>',d='';
- for(const e of ev){if(e.date!==d){d=e.date;h+=`<div class="day">${fd(d)}</div>`}h+=evCard(e,bad.has(e.id))}
+ if(!ev.length){$('#schBody').innerHTML='<div class="empty">Nothing here yet.<br>Decode a notice and your events show up here.<div class="acts" style="justify-content:center"><button class="btn p" data-go="decode">Decode a notice</button></div></div>';return}
+ const cl=clashes(ev),bad=new Set(cl.flatMap(c=>[c.a.id,c.b.id])),g={};ev.forEach(e=>(g[e.date]=g[e.date]||[]).push(e));
+ let h=cl.length?`<h2>${cl.length} clash${cl.length>1?'es':''} to fix</h2>`+cl.map(c=>cCard(c)).join(''):'<div class="ok">All clear! No clashes in your schedule.</div>';
+ for(const d of Object.keys(g).sort())h+=`<div class="day">${fd(d)}</div>`+tl(g[d])+g[d].map(e=>evCard(e,bad.has(e.id))).join('');
  $('#schBody').innerHTML=h}
-function sav(){$('#savBody').innerHTML=S.notices.length?S.notices.map(n=>`<div class="card sv"><h4><span>${n.count} event${n.count>1?'s':''} · ${new Date(n.at).toLocaleDateString('en-IN',{day:'numeric',month:'short'})}</span></h4><div class="meta" style="margin-bottom:8px">${esc(n.text.slice(0,140))}${n.text.length>140?'…':''}</div><div class="acts" style="margin:0"><button class="btn" data-open="${n.id}">Open in chat</button><button class="btn" data-cal="${n.id}">Add to calendar</button><button class="btn r" data-del="${n.id}">Delete</button></div></div>`).join(''):'<div class="empty">No saved notices yet. Every notice you decode is saved here.</div>'}
+function sav(){$('#savBody').innerHTML=S.notices.length?S.notices.map(n=>`<div class="card sv"><h4><span>${n.count} event${n.count>1?'s':''} · ${new Date(n.at).toLocaleDateString('en-IN',{day:'numeric',month:'short'})}</span></h4><div class="meta" style="margin-bottom:8px">${esc(n.text.slice(0,140))}${n.text.length>140?'…':''}</div><div class="acts" style="margin:0"><button class="btn" data-open="${n.id}">Open in chat</button><button class="btn" data-cal="${n.id}">Add to calendar</button><button class="btn" data-wa="${n.id}">Share</button><button class="btn r" data-del="${n.id}">Delete</button></div></div>`).join(''):'<div class="empty">No saved notices yet.<br>Every notice you decode is saved here.<div class="acts" style="justify-content:center"><button class="btn p" data-go="decode">Decode a notice</button></div></div>'}
 
 /* ---------- editing ---------- */
 let cur=null;
-function edit(id){const e=S.events.find(x=>x.id===id);if(!e)return;cur=e;$('#eT').value=e.title;$('#eY').value=e.type;$('#eD').value=e.date;$('#eS').value=e.start;$('#eE').value=e.end;$('#eV').value=e.venue;$('#dlg').showModal()}
-$('#frm').addEventListener('submit',()=>{if(!cur)return;Object.assign(cur,{title:$('#eT').value.trim()||cur.title,type:$('#eY').value,date:$('#eD').value,start:$('#eS').value,end:$('#eE').value||$('#eS').value,venue:$('#eV').value.trim()});if(!cur.start)cur.end='';save();refresh();toast('Event updated')});
+function edit(id){const e=S.events.find(x=>x.id===id);if(!e)return;cur=e;$('#eErr').textContent='';$('#eT').value=e.title;$('#eY').value=e.type;$('#eD').value=e.date;$('#eS').value=e.start;$('#eE').value=e.end;$('#eV').value=e.venue;$('#dlg').showModal()}
+$('#frm').addEventListener('submit',ev=>{ev.preventDefault();if(!cur)return;const err=$('#eErr'),cl=x=>x.replace(/[\u0000-\u001f]/g,' ').trim(),t=cl($('#eT').value).slice(0,80),d=$('#eD').value,s=$('#eS').value,en=$('#eE').value,ty=$('#eY').value,bad=m=>{err.textContent=m};
+ if(t.length<2)return bad('Please give the event a title (at least 2 characters).');
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||isNaN(new Date(d+'T00:00'))||+d.slice(0,4)<2000||+d.slice(0,4)>2100)return bad('Please pick a valid date.');
+ if(!s&&en)return bad('Add a start time, or clear the end time.');
+ if(s&&en&&ty!=='Deadline'&&mn(en)<=mn(s))return bad('The end time must be after the start time.');
+ err.textContent='';Object.assign(cur,{title:t,type:ty,date:d,start:s,end:!s?'':(ty==='Deadline'?s:(en||hm(Math.min(mn(s)+(+S.set.dur),1439)))),venue:cl($('#eV').value).slice(0,60)});save();$('#dlg').close();refresh();toast('Event updated')});
 $('#eC').onclick=()=>$('#dlg').close();
 $('#eX').onclick=()=>{S.events=S.events.filter(e=>e!==cur);save();$('#dlg').close();refresh();toast('Event removed')};
 function refresh(){const v=$('.view.on').id;if(v==='decode')render();if(v==='sched')sch();if(v==='saved')sav();stats()}
 document.addEventListener('click',e=>{const t=e.target.closest('button');if(!t)return;const D=t.dataset;
- if(D.v)go(D.v);else if(D.go)go(D.go);else if(D.edit)edit(D.edit);
+ if(D.v)go(D.v);else if(D.go)go(D.go);else if(D.edit)edit(D.edit);else if(D.drop){const x=S.events.find(e=>e.id===D.drop);if(x){x.skip=true;save();refresh();toast('Skipped: '+x.title)}}else if(D.undo){const x=S.events.find(e=>e.id===D.undo);if(x){x.skip=false;save();refresh();toast('Restored')}}else if(D.wa)shareWA(S.events.filter(x=>x.notice===D.wa));
  else if(D.chk){const L=chat[chat.length-1];if(L&&L.show==='clash'&&L.n===D.chk){toast('Already checked. The results above update live.');return}chat.push({r:'bot',n:D.chk,show:'clash',t:'Let me check your schedule for overlaps...',ts:now()});render()}
  else if(D.cal)chooser(S.events.filter(x=>x.notice===D.cal));
  else if(D.open){go('decode');chat.push({r:'bot',n:D.open,t:'Here\'s that notice again:',ts:now()});render()}
@@ -313,8 +375,8 @@ $('#chk').onclick=()=>{const c=clashes(S.events);toast(c.length?c.length+' clash
 $('#expAll').onclick=()=>chooser(S.events);
 
 /* ---------- settings ---------- */
-$('#sName').value=S.set.name||'';$('#sDur').value=S.set.dur;$('#sRem').checked=!!S.set.rem;
-$('#sName').oninput=e=>{S.set.name=e.target.value;save()};$('#sDur').onchange=e=>{S.set.dur=+e.target.value;save();toast('Saved')};$('#sRem').onchange=e=>{S.set.rem=e.target.checked;save();toast('Saved')};
+$('#sName').value=S.set.name||'';$('#sDur').value=S.set.dur;$('#sRem').value=S.set.remind;
+const saveNm=()=>nmSave();$('#saveName').onclick=saveNm;$('#sName').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();saveNm()}});$('#sDur').onchange=e=>{S.set.dur=+e.target.value;save();toast('Saved')};$('#sRem').onchange=e=>{S.set.remind=e.target.value;save();toast('Saved')};
 $('#wipe').onclick=()=>{if(!confirm('Delete all events and saved notices?'))return;S.events=[];S.notices=[];chat=[];save();stats();toast('All cleared')};
 stats();
 /* ---------- cloud shader (WebGL) ---------- */
@@ -383,4 +445,151 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
  new ResizeObserver(()=>{clearTimeout(t);t=setTimeout(size,150)}).observe(cv);new IntersectionObserver(e=>vis=e[0].isIntersecting,{root:$('#hp')}).observe(cv);
  gsap.ticker.add(()=>{if(!vis||window.HV===false||!st.w)return;g.setTransform(1,0,0,1,0,0);g.clearRect(0,0,cv.width,cv.height);g.setTransform(dpr,0,0,dpr,0,0);crowd.forEach(p=>{g.save();g.translate(p.x,p.y);g.scale(p.dir,1);g.drawImage(sheet,p.sx,p.sy,SW,SH,0,0,W,H);g.restore()})})})();
 (function(){const pl=$('#pl');if(!pl)return;const still=matchMedia('(prefers-reduced-motion: reduce)').matches;setTimeout(()=>{pl.classList.add('out');setTimeout(()=>pl.remove(),1100)},still?0:1700)})();
+(function(){const hp=$('#hp'),tp=$('#home .top');let ly=0,tk=false;hp.addEventListener('scroll',()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{const y=hp.scrollTop,d=y-ly;tp.classList.toggle('sc',y>40);if(Math.abs(d)>6||y<40){tp.classList.toggle('hide',y>140&&d>0);ly=y}tk=false})},{passive:true})})();
+let nameNew=false,hnT=0;
+function doWave(){const w=$('#wv'),i=w&&w.firstElementChild;if(!w||!i)return;w.classList.add('on');if(i.classList.contains('go'))return;void i.offsetWidth;i.classList.add('go')}
+function homeName(b){const el=$('#hn'),w=$('#wv');if(!el)return;clearTimeout(hnT);fitName();w.classList.remove('on');w.firstElementChild&&w.firstElementChild.classList.remove('go');el.textContent='';
+ const n=[...(S.set.name||'')],still=matchMedia('(prefers-reduced-motion: reduce)').matches,add=c=>{const s=document.createElement('span');s.className='ch';s.textContent=c;return s};
+ if(!n.length){el.className='hn plain';el.textContent='!';hnT=setTimeout(doWave,b*1000);return}
+ el.className='hn';const seq=[',','\u00a0',...n.map(c=>c===' '?'\u00a0':c),'!'];
+ if(still){seq.forEach(c=>el.appendChild(add(c)));doWave();return}
+ let i=0;const cr=document.createElement('span');cr.className='cr';
+ hnT=setTimeout(function tick(){if(!i)el.appendChild(cr);if(i<seq.length){el.insertBefore(add(seq[i++]),cr);hnT=setTimeout(tick,i===1?60:95)}else{setTimeout(()=>cr.remove(),700);doWave()}},b*1000)}
+$('#wv').addEventListener('animationend',e=>e.target.classList.remove('go'));$('#wv').addEventListener('mouseenter',doWave);$('#wv').addEventListener('click',doWave);
+homeName(2.4);
+const NM_MAX=20,RESERVED=['admin','administrator','moderator','official','support','claude','anthropic','null','undefined','system','root','test','user','guest','owner'],MASH=/(asdf|qwer|zxcv|sdfg|wert|hjkl|poiu|lkjh|mnbv)/i;
+function nmClean(v){let s=v.replace(/[^\p{L}\p{M} ]/gu,'').replace(/^[ \p{M}]+/u,'').replace(/( )\p{M}+/gu,'$1').replace(/ {2,}/g,' ').replace(/\p{M}{3,}/gu,m=>[...m].slice(0,2).join('')).replace(/(\p{L})\1{2,}/giu,'$1$1');s=s.split(' ').slice(0,3).join(' ');return [...s].slice(0,NM_MAX).join('')}
+const nmTitle=n=>n.split(' ').map(w=>{const c=[...w];return c[0].toUpperCase()+c.slice(1).join('').toLowerCase()}).join(' ');
+function nmValidate(raw){const n=nmClean(raw).trim(),w=n.split(' ').filter(Boolean),L=[...n.replace(/ /g,'')];
+ if(L.length<2)return{ok:false,code:'short',msg:'Name needs at least 2 letters.'};
+ if(w.every(x=>[...x].length<2))return{ok:false,msg:'Please include at least one full word.'};
+ if(w.some(x=>[...x].length>15))return{ok:false,msg:'Each word can have at most 15 letters.'};
+ if(new Set(L.map(c=>c.toLowerCase())).size<2)return{ok:false,msg:'Please use your real name, not one repeated letter.'};
+ if(w.length>1&&new Set(w.map(x=>x.toLowerCase())).size===1)return{ok:false,msg:'Please do not repeat the same word.'};
+ if(MASH.test(n.replace(/ /g,'')))return{ok:false,msg:'That looks like random typing. Please use your real name.'};
+ if(w.some(x=>[...x].length>=6&&/^(.{1,3})\1{2,}$/iu.test(x)))return{ok:false,msg:'That looks like a repeating pattern. Please use your real name.'};
+ if(w.some(x=>/^[a-z]{5,}$/i.test(x)&&!/[aeiouy]/i.test(x)))return{ok:false,msg:'That does not look like a real name.'};
+ if(w.some(x=>RESERVED.includes(x.toLowerCase())))return{ok:false,msg:'That name is reserved. Please use your own name.'};
+ return{ok:true,name:nmTitle(n)}}
+const nmSaves=[];
+function nmGate(){const t=Date.now();while(nmSaves.length&&t-nmSaves[0]>60000)nmSaves.shift();const last=nmSaves[nmSaves.length-1];if(last&&t-last<3000){nmShow('Please wait a few seconds before saving again.',true);return false}if(nmSaves.length>=5){nmShow('Too many changes. Please try again in a minute.',true);return false}nmSaves.push(t);return true}
+function nmShow(msg,err){const h=$('#nmHint');h.textContent=msg;h.classList.toggle('bad',!!err)}
+function nmUI(strict){const el=$('#sName'),raw=el.value.trim();$('#nmCnt').textContent=[...el.value].length+'/'+NM_MAX;let ok=false;
+ if(!raw){ok=!!S.set.name;nmShow(S.set.name?'Leave it empty and press Save to remove your name.':'Letters and spaces only. No numbers or symbols.',false)}
+ else{const r=nmValidate(raw);if(r.ok){ok=r.name!==S.set.name;nmShow(ok?'Looks good. Press Save.':'This is your saved name.',false)}else nmShow(r.msg,r.code!=='short'||!!strict)}
+ $('#saveName').disabled=!ok}
+function nmSave(){const el=$('#sName'),raw=el.value.trim();
+ if(!raw){if(!S.set.name||!nmGate())return;S.set.name='';save();nameNew=true;render();toast('Name removed');nmUI();return}
+ const r=nmValidate(raw);if(!r.ok){nmShow(r.msg,true);return}if(r.name===S.set.name||!nmGate())return;
+ S.set.name=r.name;el.value=r.name;save();nameNew=true;render();toast('Saved. Hi, '+r.name+'!');nmUI()}
+(function(){const el=$('#sName');let t;const flash=()=>{el.classList.add('bad');$('#nmHint').classList.add('bad');clearTimeout(t);t=setTimeout(()=>{el.classList.remove('bad');nmUI()},700)};
+ const fix=()=>{const v=el.value,i=el.selectionStart,c=nmClean(v);if(c!==v){const k=nmClean(v.slice(0,i)).length;el.value=c;el.setSelectionRange(k,k);flash()}nmUI()};
+ el.addEventListener('beforeinput',e=>{if(e.data&&/[^\p{L}\p{M} ]/u.test(e.data)){e.preventDefault();flash()}});
+ el.addEventListener('input',e=>{if(!e.isComposing)fix()});el.addEventListener('compositionend',fix);el.addEventListener('blur',()=>nmUI(true));
+ const sv=nmValidate(S.set.name||'');S.set.name=sv.ok?sv.name:'';el.value=S.set.name;nmUI()})();
+let fitT;
+function fitName(){const l1=$('#l1');if(!l1)return;const h1=l1.parentElement;l1.style.fontSize='';const n=S.set.name;if(!n)return;
+ const m=document.createElement('span');m.className='l1';m.style.cssText='position:absolute;visibility:hidden;left:0;top:0;font-size:100%';m.innerHTML='Hey<span class="hn">, '+esc(n)+'!</span> <span style="opacity:1">👋</span>';h1.appendChild(m);
+ const w=m.getBoundingClientRect().width*1.03,av=h1.clientWidth;m.remove();if(w>av)l1.style.fontSize=Math.max(35,Math.floor(av/w*1000)/10)+'%'}
+addEventListener('resize',()=>{clearTimeout(fitT);fitT=setTimeout(fitName,120)});document.fonts&&document.fonts.ready.then(fitName);
+
+/* ---------- understood text, demo, share, safety, install ---------- */
+const TIMEG=/\b\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm|baje)(?:\s*(?:to|se|till|until|-|–|—)\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm|baje)?)?|\b\d{1,2}[:.]\d{2}\s*(?:am|pm)?(?:\s*(?:to|till|until|-|–|—)\s*\d{1,2}[:.]\d{2}\s*(?:am|pm)?)?|\b(?:12\s*)?noon\b/gi,
+VENG=/(?<=\b(?:in|at|to)\s+(?:the\s+)?)(?:[A-Za-z]+\s+){0,2}(?:Room|Hall|Lab|Office|Auditorium|Library|Block|Ground)(?:\s+\d+\w*)?|\b(?:(?:Seminar|Conference|Main|Mini)\s+Hall|(?:Room|Lab|Hall|Auditorium|Block)\s+\d+\w*|Auditorium|Library)\b/gi,
+RELG=/\b(?:day after tomorrow|tomorrow|tmrw|today|aaj|kal|parso|(?:(?:next|this|coming)\s+)?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday))\b/gi;
+function hilite(t){const rg=[],add=(re,c)=>{for(const m of t.matchAll(re))rg.push([m.index,m.index+m[0].length,c])};
+ add(new RegExp(R1.source,'gi'),'d');add(new RegExp(R2.source,'gi'),'d');add(new RegExp(R3.source,'g'),'d');add(RELG,'d');add(TIMEG,'t');add(VENG,'v');
+ rg.sort((a,b)=>a[0]-b[0]||b[1]-a[1]);let out='',p=0;for(const [s,e,c] of rg){if(s<p)continue;out+=esc(t.slice(p,s))+`<mark class="m${c}">${esc(t.slice(s,e))}</mark>`;p=e}return out+esc(t.slice(p))}
+function und(n){const nt=S.notices.find(x=>x.id===n);if(!nt)return'';const tn=nt.text.replace(/\n/g,' '),rs=[];S.events.filter(e=>e.notice===n&&e.src).forEach(e=>{const i=tn.indexOf(e.src);if(i>=0)rs.push([i,i+e.src.length,e.id])});rs.sort((a,b)=>a[0]-b[0]);let out='',p=0;for(const [s,en,id] of rs){if(s<p)continue;out+=hilite(nt.text.slice(p,s))+`<span class="src" data-eid="${id}">${hilite(nt.text.slice(s,en))}</span>`;p=en}out+=hilite(nt.text.slice(p));
+ return `<details class="und"><summary>What I understood</summary><div class="hlt">${out}</div><div class="lg"><mark class="md">date</mark><mark class="mt">time</mark><mark class="mv">venue</mark><span style="color:var(--mu)">Hover or tap an event card to light up its sentence.</span></div></details>`}
+const SITE='https://notice-decoder-asur.vercel.app/';let lastWa=0;
+function waText(list){const L=['*Notice Decoder*',''];list.forEach(e=>L.push(`• ${e.title}: ${fd(e.date)}${e.start?', '+tm(e):''}${e.venue?', '+e.venue:''}`));const c=clashes(list);if(c.length){L.push('','Clashes:');c.forEach(x=>L.push('⚠ '+x.msg))}L.push('','Decoded with '+SITE);return L.join('\n')}
+function shareWA(list){list=list.filter(e=>!e.skip).sort((a,b)=>(a.date+(a.start||'')).localeCompare(b.date+(b.start||''))).slice(0,20);if(!list.length)return toast('Nothing to share yet');if(Date.now()-lastWa<1500)return;lastWa=Date.now();window.open('https://wa.me/?text='+encodeURIComponent(waText(list).slice(0,1500)),'_blank')}
+$('#waAll').onclick=()=>shareWA(S.events);
+const DEMOS=[SAMPLE,'Lab viva will be held on 14 Nov from 10:00 AM to 12:00 PM in Lab 2. A workshop on Git is scheduled on 14 Nov from 11:30 AM to 1:00 PM in Seminar Hall.','Fee payment last date is 20 Nov by 4:00 PM at the accounts office. A placement talk will be held on 20 Nov from 3:30 PM to 5:00 PM in Auditorium.'];
+let dI=0,dT=0,dTy=0,dAuto=true,dVis=false;
+function playDemo(i){clearTimeout(dT);clearInterval(dTy);dI=i;$$('#dchips .chip').forEach((b,k)=>b.classList.toggle('on',k===i));const t=DEMOS[i],p=$('#dtxt'),o=$('#dout');o.innerHTML='';p.textContent='';let n=0;
+ const fin=()=>{p.innerHTML=hilite(t);let ev=[];try{ev=decode(t)}catch(e){}const cl=clashes(ev),bd=new Set(cl.flatMap(c=>[c.a.id,c.b.id]));o.innerHTML=ev.map((e,k)=>`<div class="dl2" style="--d:${k*.12}s">${evCard(e,bd.has(e.id),true)}</div>`).join('')+cl.map((c,k)=>`<div class="dl2" style="--d:${(ev.length+k)*.12}s">${cCard(c,true)}</div>`).join('');
+  if(dAuto&&dVis)dT=setTimeout(()=>{if(window.HV!==false)playDemo((dI+1)%DEMOS.length)},7500)};
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){fin();return}
+ dTy=setInterval(()=>{n+=5;p.textContent=t.slice(0,n);if(n>=t.length){clearInterval(dTy);fin()}},26)}
+$('#dchips').addEventListener('click',e=>{const b=e.target.closest('button[data-d]');if(!b)return;dAuto=false;playDemo(+b.dataset.d)});
+$('#dtry').onclick=()=>send(DEMOS[dI]);
+new IntersectionObserver(es=>{dVis=es[0].isIntersecting;if(dVis)playDemo(dI);else{clearTimeout(dT);clearInterval(dTy)}},{root:$('#hp'),threshold:.25}).observe($('.demo'));
+let lastErr=0;const warn=m=>{if(Date.now()-lastErr>4000){lastErr=Date.now();toast(m)}};
+addEventListener('error',e=>{if(!e.message||/ResizeObserver/.test(e.message))return;busy=false;warn('Something went wrong. Your saved data is safe.')});
+addEventListener('unhandledrejection',()=>{busy=false;warn('Something went wrong. Please try again.')});
+$('#inp').addEventListener('input',e=>{if(e.target.value.length>=MAXTXT)warn('That is the longest notice I can read (20,000 characters).')});
+let dip;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dip=e;$('#inst').hidden=false});addEventListener('appinstalled',()=>{$('#inst').hidden=true;toast('Installed!')});
+$('#inst').onclick=async()=>{if(!dip)return;dip.prompt();try{await dip.userChoice}catch(e){}dip=null;$('#inst').hidden=true};
+if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)&&top===self)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+
+/* ---------- photo reading (OCR), card to text linking ---------- */
+const hot=(id,on)=>$$(`.src[data-eid="${id}"]`).forEach(x=>x.classList.toggle('hot',on));
+document.addEventListener('mouseover',e=>{const c=e.target.closest('.card[data-eid]');if(c)hot(c.dataset.eid,true)});
+document.addEventListener('mouseout',e=>{const c=e.target.closest('.card[data-eid]');if(c)hot(c.dataset.eid,false)});
+document.addEventListener('click',e=>{const c=e.target.closest('.card[data-eid]');if(c&&!e.target.closest('button')){hot(c.dataset.eid,true);setTimeout(()=>hot(c.dataset.eid,false),1800)}});
+let ocrBusy=false,lastOcr=0;
+const LIBS={tess:'https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js',pdf:'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',mam:'https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js'},libP={};
+function lib(k,g){if(window[g])return Promise.resolve();return libP[k]||(libP[k]=new Promise((ok,no)=>{const s=document.createElement('script');s.src=LIBS[k];s.onload=ok;s.onerror=()=>{delete libP[k];no(new Error('load'))};document.head.appendChild(s)}))}
+/* tables to sentences: rows like "13 Nov 2026 | 10:00 - 11:30 AM | Room 204 | Maths" become normal sentences */
+const HDR=/\b(date|day|time|timing|slot|venue|room|hall|place|location|subject|course|event|topic|activity|paper|exam|test|deadline|particulars)\b/i;
+function rowSentence(hd,c){let d='',t='',v='';const o=[];c.forEach((x,i)=>{const k=(hd[i]||'').toLowerCase();if(!x)return;if(/date|day/.test(k)&&!/time/.test(k))d=x;else if(/time|timing|slot/.test(k))t=x;else if(/venue|room|hall|place|location/.test(k))v=x;else o.push(x)});
+ let ti=o.join(' ')||'Event';if(!/\b(exam|test|quiz|viva)\b/i.test(ti)){if(hd.some(x=>/exam|paper/i.test(x)))ti+=' exam';else if(hd.some(x=>/\btest\b/i.test(x)))ti+=' test'}
+ return `${ti}${d?' on '+d:''}${t?' from '+t.replace(/\s*(?:-|–|—)\s*/,' to '):''}${v?' in '+v:''}.`}
+function tabulate(lines){const out=[];let hd=null;for(const ln of lines){const c=ln.split(' | ').map(x=>x.trim());
+ if(c.length>=2&&c.filter(x=>HDR.test(x)&&!/\d/.test(x)&&x.split(/\s+/).length<=3).length>=2&&!/\d{1,2}[:.]\d{2}/.test(ln)){hd=c;continue}
+ if(hd&&c.length>=2&&c.length<=hd.length+1){out.push(rowSentence(hd,c));continue}
+ hd=null;out.push(ln.replace(/ \| /g,' '))}return out}
+const ocrFix=t=>tabulate(t.replace(/\r/g,'').split('\n').map(l=>l.replace(/[¦]/g,' ').replace(/(\d)\s*:\s*(\d{2})/g,'$1:$2').replace(/(\d{1,2}[:.]\d{2})\s*([AaPp])\s*\.?\s*[Mm]\b\.?/g,'$1 $2M').replace(/^\s+|\s+$/g,'').replace(/ {3,}/g,' | '))).join('\n');
+async function sniff(f){const b=new Uint8Array(await f.slice(0,12).arrayBuffer()),s=String.fromCharCode(...b);return b[0]===0x89&&s.slice(1,4)==='PNG'?'png':(b[0]===0xFF&&b[1]===0xD8&&b[2]===0xFF)?'jpg':(s.slice(0,4)==='RIFF'&&s.slice(8,12)==='WEBP')?'webp':s.slice(0,4)==='%PDF'?'pdf':(b[0]===0x50&&b[1]===0x4B)?'zip':'?'}
+function imgCanvas(f){return new Promise((ok,no)=>{const u=URL.createObjectURL(f),im=new Image();im.onload=()=>{const k=Math.min(1,4000/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.width*k));c.height=Math.max(1,Math.round(im.height*k));c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);ok(c)};im.onerror=()=>{URL.revokeObjectURL(u);no(new Error('img'))};im.src=u})}
+/* clean up a picture for reading: upscale small ones, grayscale, stretch contrast, optional black and white */
+function prep(src,bin){const k=Math.max(src.width,src.height),sc=k<1600?Math.min(2,3000/k):Math.min(1,3000/k),c=document.createElement('canvas');c.width=Math.max(1,Math.round(src.width*sc));c.height=Math.max(1,Math.round(src.height*sc));const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,c.width,c.height);g.drawImage(src,0,0,c.width,c.height);
+ const im=g.getImageData(0,0,c.width,c.height),d=im.data,n=d.length/4,hist=new Array(256).fill(0);for(let i=0;i<d.length;i+=4){const y=Math.round(.299*d[i]+.587*d[i+1]+.114*d[i+2]);d[i]=d[i+1]=d[i+2]=y;hist[y]++}
+ let lo=0,hi=255,a=0;for(let i=0;i<256;i++){a+=hist[i];if(a>=n*.01){lo=i;break}}a=0;for(let i=255;i>=0;i--){a+=hist[i];if(a>=n*.01){hi=i;break}}if(hi<=lo){lo=0;hi=255}
+ let sum=0;for(let i=0;i<256;i++)sum+=i*hist[i];let sB=0,wB=0,mx=0,th=128;for(let i=0;i<256;i++){wB+=hist[i];if(!wB)continue;const wF=n-wB;if(!wF)break;sB+=i*hist[i];const mB=sB/wB,mF=(sum-sB)/wF,v=wB*wF*(mB-mF)*(mB-mF);if(v>mx){mx=v;th=i}}
+ for(let i=0;i<d.length;i+=4){const y=d[i];d[i]=d[i+1]=d[i+2]=bin?(y>th?255:0):Math.max(0,Math.min(255,(y-lo)*255/(hi-lo)))}g.putImageData(im,0,0);return c}
+let OW=null,OL='';
+async function ocrCanvas(src,label){await lib('tess','Tesseract');OL=label;if(!OW){OW=await Tesseract.createWorker('eng',1,{logger:m=>{if(typeof m.progress==='number')stepTxt(OL+' '+Math.round(m.progress*100)+'%')}});await OW.setParameters({preserve_interword_spaces:'1'})}
+ let best=null;for(const bin of [false,true]){const d=(await OW.recognize(prep(src,bin))).data;if(!best||d.confidence>best.conf+3)best={t:d.text,conf:d.confidence};if(best.conf>=75)break}return best}
+const endOcr=async()=>{const w=OW;OW=null;if(w)try{await w.terminate()}catch(e){}};
+const stepTxt=t=>{const s=$('#step');if(s)s.textContent=t};
+function pdfLines(tc){const rows=[];tc.items.forEach(it=>{if(!it.str||!it.str.trim())return;const y=Math.round(it.transform[5]/3)*3;let r=rows.find(x=>Math.abs(x.y-y)<=2);if(!r){r={y,it:[]};rows.push(r)}r.it.push({x:it.transform[4],w:it.width||0,h:it.height||10,s:it.str})});
+ rows.sort((a,b)=>b.y-a.y);return rows.map(r=>{r.it.sort((a,b)=>a.x-b.x);let s='',px=null;for(const t of r.it){if(px!==null){const gap=t.x-px;s+=gap>t.h*1.5?' | ':(gap>t.h*.15?' ':'')}s+=t.s.trim();px=t.x+t.w}return s}).join('\n')}
+async function readPdf(f){await lib('pdf','pdfjsLib');pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';let pdf;
+ try{pdf=await pdfjsLib.getDocument({data:new Uint8Array(await f.arrayBuffer())}).promise}catch(e){throw new Error(e&&e.name==='PasswordException'?'pw':'bad')}
+ const n=Math.min(pdf.numPages,30),pages=[],conf=[];let ocrN=0;
+ for(let i=1;i<=n;i++){stepTxt(`Reading page ${i} of ${n}...`);const pg=await pdf.getPage(i);let txt=pdfLines(await pg.getTextContent());
+  if(txt.replace(/\s/g,'').length<40&&ocrN<6){ocrN++;stepTxt(`Page ${i} looks scanned. Reading it as a picture...`);const vp=pg.getViewport({scale:2.2}),c=document.createElement('canvas');c.width=Math.round(vp.width);c.height=Math.round(vp.height);await pg.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;const o=await ocrCanvas(c,`Reading page ${i}`);txt=ocrFix(o.t);conf.push(o.conf)}
+  else txt=tabulate(txt.split('\n')).join('\n');pages.push(txt)}
+ return{text:pages.join('\n'),pages:pdf.numPages,read:n,conf:conf.length?Math.min(...conf):null,scanned:ocrN>0,what:'PDF'}}
+async function readDocx(f){await lib('mam','mammoth');const r=await mammoth.convertToHtml({arrayBuffer:await f.arrayBuffer()}),doc=new DOMParser().parseFromString(r.value,'text/html'),L=[];
+ doc.body.querySelectorAll('p,h1,h2,h3,h4,h5,h6,li,table').forEach(e=>{if(e.tagName!=='TABLE'&&e.closest('table'))return;if(e.tagName==='TABLE')[...e.rows].forEach(rw=>L.push([...rw.cells].map(c=>c.textContent.replace(/\s+/g,' ').trim()).join(' | ')));else{const t=e.textContent.replace(/\s+/g,' ').trim();if(t)L.push(t)}});
+ return{text:tabulate(L).join('\n'),what:'Word file'}}
+async function readImg(f){const o=await ocrCanvas(await imgCanvas(f),'Reading the photo');return{text:ocrFix(o.t),conf:o.conf,scanned:true,what:'photo'}}
+async function readFile(file){if(!file||ocrBusy||busy)return;go('decode');hello();const say=t=>{chat.push({r:'bot',t,ts:now()});render()};
+ const name=file.name.replace(/[^\w .()-]/g,'').slice(0,40)||'file',ext=(file.name.split('.').pop()||'').toLowerCase(),kind=await sniff(file),MB=1048576;let mode='';
+ if(['png','jpg','jpeg','webp'].includes(ext)){if(!['png','jpg','webp'].includes(kind))return say('That file does not look like a real picture. Try another one.');if(file.size>8*MB)return say('That picture is too big (max 8 MB).');mode='img'}
+ else if(ext==='pdf'){if(kind!=='pdf')return say('That file does not look like a real PDF.');if(file.size>15*MB)return say('That PDF is too big (max 15 MB).');mode='pdf'}
+ else if(ext==='docx'){if(kind!=='zip')return say('That file does not look like a real Word (.docx) file.');if(file.size>10*MB)return say('That Word file is too big (max 10 MB).');mode='docx'}
+ else if(ext==='doc')return say('Old .doc files cannot be read. Please save it as .docx or PDF and upload again.');
+ else if(['txt','md','csv'].includes(ext)){if(kind!=='?')return say('That file is not plain text.');if(file.size>MB)return say('That text file is too big (max 1 MB).');mode='txt'}
+ else return say('I can read photos (PNG, JPG, WebP), PDF, Word (.docx) and text files.');
+ if(Date.now()-lastOcr<3000)return say('Easy there! Give me a few seconds before the next file.');
+ lastOcr=Date.now();ocrBusy=true;busy=true;chat.push({r:'me',t:'File: '+name+' ('+Math.max(1,Math.round(file.size/1024))+' KB)',ts:now()});$('#stat').textContent='reading file…';render();stepTxt('Opening the file...');
+ const end=async()=>{await endOcr();busy=false;ocrBusy=false;$('#stat').textContent='online'};let r;
+ try{if(mode==='img')r=await readImg(file);else if(mode==='pdf')r=await readPdf(file);else if(mode==='docx')r=await readDocx(file);else{let t=await file.text();if(/\u0000/.test(t.slice(0,2000)))throw new Error('bin');if(ext==='csv')t=tabulate(t.split(/\r?\n/).map(l=>l.split(',').map(x=>x.trim().replace(/^"|"$/g,'')).join(' | '))).join('\n');r={text:t,what:'text file'}}}
+ catch(e){await end();const m=String(e&&e.message);return say(m==='pw'?'That PDF is password protected. Remove the password and try again.':m==='load'?'I could not load the reader for this file type. It needs an internet connection and does not work in some preview windows. You can paste the text instead.':m==='bin'?'That file is not plain text.':'I could not read that file. It may be damaged, or this view blocks the reader. You can paste the text instead.')}
+ await end();const long=r.text.length>MAXTXT,txt=cleanNotice(r.text);
+ if(txt.length<12)return say('I could not find any readable text in that '+r.what+'. Try a clearer or larger one, or paste the text.');
+ if(!/\d/.test(txt))return say('I read the text, but found no dates or times in it, so there is nothing to put on a calendar.');
+ const note=(r.pages?`I read ${r.read} of ${r.pages} page${r.pages>1?'s':''}. `:'')+(long?'It was long, so I read the first 20,000 characters. ':'')+(r.conf!=null?`Reading accuracy was about ${Math.round(r.conf)}%. `+(r.conf<70?'Parts may be blurry, so please double-check every date and time. ':''):'');
+ if(r.scanned){$('#inp').value=txt;$('#inp').dispatchEvent(new Event('input'));say(note+'I read this from your '+r.what+'. Check it, fix anything that looks off, then press send.');$('#inp').focus()}
+ else{if(note)chat.push({r:'bot',t:note.trim(),ts:now()});send(txt,'File: '+name)}}
+$('#cam').onclick=()=>$('#img').click();
+$('#img').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];e.target.value='';readFile(f)});
+$('#inp').addEventListener('paste',e=>{const f=e.clipboardData&&e.clipboardData.files&&e.clipboardData.files[0];if(f){e.preventDefault();readFile(f)}});
+$('#sc').addEventListener('dragover',e=>e.preventDefault());
+$('#sc').addEventListener('drop',e=>{e.preventDefault();const f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];if(f)readFile(f)});
 </script></body></html>
